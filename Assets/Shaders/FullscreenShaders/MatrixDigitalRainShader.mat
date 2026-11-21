@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MatrixDigitalRainShader
+  m_Shader: {fileID: 4800000, guid: 2d9a4239c29cec947b8e587d9a0be17c, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _Brightness: 10
+    - _Density: 30
+    - _GridX: 80
+    - _GridY: 45
+    - _Speed: 150
+    m_Colors:
+    - _HeadColor: {r: 0, g: 1.6272774, b: 2.0026178, a: 1}
+    - _MatrixColor: {r: 0.11614455, g: 0.2684884, b: 0.5471698, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

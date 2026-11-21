@@ -1,0 +1,78 @@
+
+# ==============================
+# Unity generated folders
+# ==============================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+/AlphaBuild_*/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# ==============================
+# IDE
+# ==============================
+.vs/
+.idea/
+.vscode/
+.vscode/*
+!.vscode/extensions.json
+
+# Visual Studio
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svclog
+
+# Rider
+*.sln.iml
+
+# ==============================
+# Build files
+# ==============================
+*.apk
+*.aab
+*.app
+*.exe
+*.dll
+*.pdb
+*.mdb
+
+# ==============================
+# OS
+# ==============================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==============================
+# Crash reports
+# ==============================
+sysinfo.txt
+crashlytics-build.properties
+
+# ==============================
+# Keep only selected Unity Assets
+# ==============================
+
+Assets/*
+
+# Allowed folders
+!Assets/Scripts/
+!Assets/ScriptableObjects/
+!Assets/Shaders/
+!Assets/Settings/
+
+# Keep folder meta files
+!Assets/Scripts.meta
+!Assets/ScriptableObjects.meta
+!Assets/Shaders.meta
+!Assets/Settings.meta
