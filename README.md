@@ -8,7 +8,7 @@
 
 <br>
 
-<img src="https://github.com/user-attachments/assets/891deacc-24c4-46f3-9675-6002aac8bc36" width="100%" alt="Smiley gameplay">
+<img src="https://github.com/user-attachments/assets/f8d2625b-4ba9-4208-a3f3-577b769491b8" width="100%" alt="SMILEY gameplay animation">
 
 <br>
 
@@ -75,7 +75,7 @@ And it's smiling.
 
 <div align="center">
 
-<img src="https://github.com/user-attachments/assets/f8d2625b-4ba9-4208-a3f3-577b769491b8" width="100%" alt="SMILEY gameplay animation">
+<img src="https://github.com/user-attachments/assets/891deacc-24c4-46f3-9675-6002aac8bc36" width="100%" alt="Smiley gameplay">
 
 </div>
 
