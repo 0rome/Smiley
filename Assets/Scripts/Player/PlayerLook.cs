@@ -46,4 +46,14 @@ public class PlayerLook : MonoBehaviour
 
         player.Rotate(Vector3.up * currentLook.x);
     }
+    public void ResetLook()
+    {
+        xRotation = 0f;
+
+        currentLook = Vector2.zero;
+        currentVelocity = Vector2.zero;
+
+        transform.localRotation = Quaternion.identity;
+        player.localRotation = Quaternion.identity;
+    }
 }

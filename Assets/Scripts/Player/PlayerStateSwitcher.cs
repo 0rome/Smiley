@@ -25,7 +25,10 @@ public sealed class PlayerStateSwitcher : MonoBehaviour
     {
         customPassVolume.customPasses[5].enabled = false;
 
+        characterController.enabled = false;
+
         isActiveControll = false;
+        playerLook.ResetLook();
 
         playerController.enabled = false;
         playerInteractions.enabled = false;
@@ -37,6 +40,8 @@ public sealed class PlayerStateSwitcher : MonoBehaviour
     public void ActivatePlayerControl()
     {
         customPassVolume.customPasses[5].enabled = true;
+
+        characterController.enabled = true;
 
         isActiveControll = true;
 

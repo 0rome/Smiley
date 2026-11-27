@@ -370,7 +370,7 @@ MonoBehaviour:
       advancedUpscalerNames:
       - DLSS
       - FSR2
-      DLSSPerfQualitySetting: 0
+      DLSSPerfQualitySetting: 2
       DLSSInjectionPoint: 0
       TAAUInjectionPoint: 0
       STPInjectionPoint: 0
@@ -385,7 +385,7 @@ MonoBehaviour:
       FSR2EnableSharpness: 1
       FSR2Sharpness: 0
       FSR2UseOptimalSettings: 1
-      FSR2QualitySetting: 2
+      FSR2QualitySetting: 0
       FSR2InjectionPoint: 0
       fsrOverrideSharpness: 0
       fsrSharpness: 0.92
