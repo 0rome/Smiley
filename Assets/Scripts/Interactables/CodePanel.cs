@@ -80,7 +80,7 @@ public class CodePanel : InteractableBase
         if (cameraTransform != null)
             cameraTransform.localRotation = Quaternion.identity;
 
-        playerStateSwitcher.DeactivatePlayerControl();
+        playerStateSwitcher.DeactivatePlayerControl(this);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         playerInPanel = true;
@@ -90,7 +90,7 @@ public class CodePanel : InteractableBase
     {
         if (!playerInPanel) return;
 
-        playerStateSwitcher.ActivatePlayerControl();
+        playerStateSwitcher.ActivatePlayerControl(this);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         playerInPanel = false;

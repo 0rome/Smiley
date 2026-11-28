@@ -30,7 +30,7 @@ public class HidingBed : InteractableBase, IHideble
         {
             playerPreviousPosition = playerStateSwitcher.transform.position;
 
-            playerStateSwitcher.DeactivatePlayerControl();
+            playerStateSwitcher.DeactivatePlayerControl(this);
 
             playerStateSwitcher.transform.position = cameraPivot.position;
             playerStateSwitcher.transform.rotation = cameraPivot.rotation;
@@ -43,7 +43,7 @@ public class HidingBed : InteractableBase, IHideble
         {
             playerStateSwitcher.transform.position = playerPreviousPosition;
 
-            playerStateSwitcher.ActivatePlayerControl();
+            playerStateSwitcher.ActivatePlayerControl(this);
 
             isPlayerInside = false;
         }

@@ -1,3 +1,5 @@
+
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
@@ -10,47 +12,68 @@ public sealed class PlayerStateSwitcher : MonoBehaviour
     [SerializeField] private PlayerLook playerLook;
     [SerializeField] private PlayerFootsteps playerFootsteps;
     [SerializeField] private NightVision nightVision;
-    //[SerializeField] private HeadMotionController headMotionController;
+    // [SerializeField] private HeadMotionController headMotionController;
 
     [Header("Other player components")]
     [SerializeField] private CharacterController characterController;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private CustomPassVolume customPassVolume;
 
+    private readonly HashSet<object> controlBlockers = new();
+
     private bool isActiveControll = true;
-    
+
     public bool IsActiveControll => isActiveControll;
 
-    public void DeactivatePlayerControl()
+    public bool CanControlPlayer => controlBlockers.Count == 0;
+
+    private void Awake()
     {
-        customPassVolume.customPasses[5].enabled = false;
-
-        characterController.enabled = false;
-
-        isActiveControll = false;
-        playerLook.ResetLook();
-
-        playerController.enabled = false;
-        playerInteractions.enabled = false;
-        playerLook.enabled = false;
-        nightVision.enabled = false;
-        playerFootsteps.enabled = false;
-        //headMotionController.enabled = false;
+        ApplyPlayerState();
     }
-    public void ActivatePlayerControl()
+
+    public void DeactivatePlayerControl(object blocker)
     {
-        customPassVolume.customPasses[5].enabled = true;
+        if (blocker == null)
+            return;
 
-        characterController.enabled = true;
+        controlBlockers.Add(blocker);
 
-        isActiveControll = true;
-
-        playerController.enabled = true;
-        playerInteractions.enabled = true;
-        playerLook.enabled = true;
-        nightVision.enabled = true;
-        playerFootsteps.enabled= true;
-        //headMotionController.enabled = true;
+        ApplyPlayerState();
     }
-    
+
+    public void ActivatePlayerControl(object blocker)
+    {
+        if (blocker == null)
+            return;
+
+        controlBlockers.Remove(blocker);
+
+        ApplyPlayerState();
+    }
+
+    private void ApplyPlayerState()
+    {
+        bool canControl = CanControlPlayer;
+
+        if (isActiveControll == canControl)
+            return;
+
+        isActiveControll = canControl;
+
+        customPassVolume.customPasses[5].enabled = canControl;
+
+        characterController.enabled = canControl;
+
+        if (!canControl)
+            playerLook.ResetLook();
+
+        playerController.enabled = canControl;
+        playerInteractions.enabled = canControl;
+        playerLook.enabled = canControl;
+        nightVision.enabled = canControl;
+        playerFootsteps.enabled = canControl;
+
+        // headMotionController.enabled = canControl;
+    }
 }

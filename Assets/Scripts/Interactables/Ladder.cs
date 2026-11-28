@@ -78,7 +78,7 @@ public class Ladder : InteractableBase
 
         try
         {
-            playerStateSwitcher.DeactivatePlayerControl();
+            playerStateSwitcher.DeactivatePlayerControl(this);
             boxCollider.enabled = false;
             customPassVolume.customPasses[5].enabled = false;
 
@@ -142,7 +142,7 @@ public class Ladder : InteractableBase
             // Восстанавливаем состояние только в самом конце, после всех телепортаций
             customPassVolume.customPasses[5].enabled = true;
             boxCollider.enabled = true;
-            playerStateSwitcher.ActivatePlayerControl();
+            playerStateSwitcher.ActivatePlayerControl(this);
 
             _cts?.Dispose();
             _cts = null;

@@ -25,15 +25,16 @@ public class MiniMenuManager : MonoBehaviour
 
         if (isActive)
         {
-            playerStateSwitcher.DeactivatePlayerControl();
+            playerStateSwitcher.DeactivatePlayerControl(this);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else
         {
-            playerStateSwitcher.ActivatePlayerControl();
+            playerStateSwitcher.ActivatePlayerControl(this);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
     }
+    
 }
